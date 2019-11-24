@@ -13,6 +13,7 @@ If you haven't made any changes to the source file then directly use :
  `npm start`
 
 This will run the express server and serve the optimized production file of CRA and handle API calls/routing.
+Go to http://localhost:8080 in your browser to access to GUI.
 
 Should you made changes to the source, build the CRA first and rerun the server :
 
