@@ -17,6 +17,8 @@ Go to http://localhost:8080 in your browser to access to GUI.
 
 Should you made changes to the source, build the CRA first and rerun the server :
 
- `npm run build` `npm start`
+ `npm run build`
+ 
+ `npm start`
  
 To run in dev mode where CRA and Express run separately, uncomment the line near the end of server/server.js file.
