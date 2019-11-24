@@ -1,14 +1,90 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  font-family: Avenir;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+* {
+  box-sizing: border-box;
+}
+.inp {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 280px;
+}
+.inp .label {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  font-size: 16px;
+  color: #9098a9;
+  font-weight: 500;
+  transform-origin: 0 0;
+  transition: all 0.2s ease;
+}
+.inp .border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: #07f;
+  transform: scaleX(0);
+  transform-origin: 0 0;
+  transition: all 0.15s ease;
+}
+.inp input {
+  -webkit-appearance: none;
+  width: 100%;
+  border: 0;
+  font-family: inherit;
+  padding: 12px 0;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid #c8ccd4;
+  background: none;
+  border-radius: 0;
+  color: #223254;
+  transition: all 0.15s ease;
+}
+.inp input:hover {
+  background: rgba(34, 50, 84, 0.03);
+}
+.inp input:not(:placeholder-shown) + span {
+  color: #5a667f;
+  transform: translateY(-26px) scale(0.75);
+}
+.inp input:focus {
+  background: none;
+  outline: none;
+}
+.inp input:focus + span {
+  color: #07f;
+  transform: translateY(-26px) scale(0.75);
+}
+.inp input:focus + span + .border {
+  transform: scaleX(1);
+}
+
 .App {
-  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,4 +95,93 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  padding: 0.5rem 2rem;
+  margin: 3px auto;
+  text-decoration: none;
+  background: #0069ed;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+  background: #0053ba;
+}
+
+button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+button:active {
+  transform: scale(0.99);
+}
+
+.jumbo-bar {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 10px;
+}
+
+.jumbo-bar div {
+}
+
+.add-icon-section {
+  flex: 2;
+}
+
+.generator-section {
+  flex: 1;
+  text-align: right;
+}
+
+.icon-list-section {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.icon-wrapper {
+  text-align: center;
+}
+
+.icon-individual {
+  font-size: 4em;
+}
+
+.icon-title {
+  justify-content: space-around;
+  font-size: 0.8em;
+}
+
+.icon-title p {
+  margin: 0;
+  padding: 0.2em 0.5em;
+  display: inline-block;
+}
+
+.icon-delete {
+  display: inline-block;
+  background: red;
+  border-radius: 0.7em;
+  font-size: 0.7em;
+  padding: 0.2em 0.4em;
+  margin: 0;
+}
+
+.notification-bar {
+  border: solid 1px lightgray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

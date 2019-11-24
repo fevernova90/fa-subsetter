@@ -1,0 +1,6 @@
+export const GENERATE_ICONS = 'GENERATE_ICONS';
+export const NEW_ICON = 'NEW_ICON';
+export const SAVE = 'SAVE';
+export const PUSH_NOTIFICATION = 'PUSH_NOTIFICATION';
+export const DISMISS_NOTIFICATION = 'DISMISS_NOTIFICATION';
+export const DELETE_ICON = 'DELETE_ICON';
