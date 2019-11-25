@@ -73,30 +73,6 @@ body {
   transform: scaleX(1);
 }
 
-.App {
-  margin: 0;
-  padding: 0;
-}
-
-.App-logo {
-  height: 10vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 15vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
-}
-
 button {
   display: inline-block;
   border: none;
@@ -128,8 +104,38 @@ button:active {
   transform: scale(0.99);
 }
 
+.App {
+  margin: 0;
+  padding: 0;
+}
+
+.App-logo {
+  height: 10vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.App-body {
+  width: 100%;
+  padding: 0 2em;
+}
+
 .jumbo-bar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 0 10px;
 }
@@ -148,7 +154,8 @@ button:active {
 
 .icon-list-section {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .icon-wrapper {
@@ -157,6 +164,7 @@ button:active {
 
 .icon-individual {
   font-size: 4em;
+  margin: 8px 16px;
 }
 
 .icon-title {

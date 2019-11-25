@@ -47,6 +47,9 @@ const zippingFiles = () => {
   archive.file(__dirname + '/generated-css/custom-fa.min.css', {
     name: 'custom-fa.min.css'
   });
+  archive.file(__dirname + '/generated-css/saved-icons.dat', {
+    name: 'saved-icons.dat'
+  });
   archive.directory(__dirname + '/generated-css/webfonts/', 'webfonts');
   archive.finalize();
 };
@@ -149,10 +152,12 @@ app.post('/gen-webfonts', (req, res) => {
 // Comment these below lines to allow for development run of the server
 // in conjunction with CRA 'npm start'
 
-app.use(express.static(path.join(__dirname, '../build')));
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../build', 'index.html'));
-});
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../build')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build', 'index.html'));
+  });
+}
 
 // Ends here - Serving the CRA build folder via express
 
