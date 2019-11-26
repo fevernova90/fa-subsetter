@@ -1,4 +1,4 @@
-html,
+/* html,
 body {
   height: 100%;
 }
@@ -11,97 +11,6 @@ body {
 }
 * {
   box-sizing: border-box;
-}
-.inp {
-  position: relative;
-  margin: auto;
-  width: 100%;
-  max-width: 280px;
-}
-.inp .label {
-  position: absolute;
-  top: 16px;
-  left: 0;
-  font-size: 16px;
-  color: #9098a9;
-  font-weight: 500;
-  transform-origin: 0 0;
-  transition: all 0.2s ease;
-}
-.inp .border {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  width: 100%;
-  background: #07f;
-  transform: scaleX(0);
-  transform-origin: 0 0;
-  transition: all 0.15s ease;
-}
-.inp input {
-  -webkit-appearance: none;
-  width: 100%;
-  border: 0;
-  font-family: inherit;
-  padding: 12px 0;
-  height: 48px;
-  font-size: 16px;
-  font-weight: 500;
-  border-bottom: 2px solid #c8ccd4;
-  background: none;
-  border-radius: 0;
-  color: #223254;
-  transition: all 0.15s ease;
-}
-.inp input:hover {
-  background: rgba(34, 50, 84, 0.03);
-}
-.inp input:not(:placeholder-shown) + span {
-  color: #5a667f;
-  transform: translateY(-26px) scale(0.75);
-}
-.inp input:focus {
-  background: none;
-  outline: none;
-}
-.inp input:focus + span {
-  color: #07f;
-  transform: translateY(-26px) scale(0.75);
-}
-.inp input:focus + span + .border {
-  transform: scaleX(1);
-}
-
-button {
-  display: inline-block;
-  border: none;
-  padding: 0.5rem 2rem;
-  margin: 3px auto;
-  text-decoration: none;
-  background: #0069ed;
-  color: #ffffff;
-  font-family: sans-serif;
-  font-size: 1rem;
-  cursor: pointer;
-  text-align: center;
-  transition: background 250ms ease-in-out, transform 150ms ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-button:hover,
-button:focus {
-  background: #0053ba;
-}
-
-button:focus {
-  outline: 1px solid #fff;
-  outline-offset: -4px;
-}
-
-button:active {
-  transform: scale(0.99);
 }
 
 .App {
@@ -126,8 +35,8 @@ button:active {
 
 .App-link {
   color: #09d3ac;
-}
-
+} */
+/* 
 .App-body {
   width: 100%;
   padding: 0 2em;
@@ -185,11 +94,11 @@ button:active {
   font-size: 0.7em;
   padding: 0.2em 0.4em;
   margin: 0;
-}
-
+} */
+/* 
 .notification-bar {
   border: solid 1px lightgray;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+} */

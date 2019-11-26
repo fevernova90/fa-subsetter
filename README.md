@@ -29,6 +29,26 @@ To run in dev mode where CRA and Express run separately, use :
 ```
 npm run dev
 ```
+
+Please note that dev mode does include [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension). You may encounter an error while opening the served page from a browser without the extension installed. The dev tools 'hook' is applied into the Redux Middleware inside `./store.js` :
+
+```javascript
+const middleware = [thunk];
+
+const store = createStore(
+  rootReducer,
+  initialState,
+  dev
+    ? compose(
+        applyMiddleware(...middleware),
+        window.__REDUX_DEVTOOLS_EXTENSION__ &&
+          window.__REDUX_DEVTOOLS_EXTENSION__()
+      )
+    : applyMiddleware(...middleware)
+);
+```
+
+
 ___
 
 Font Awesome Pro is possible but you have to manually configure the credentials for `@fortawesome/fontawesome` by following this [instructions](https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers).

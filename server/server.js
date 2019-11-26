@@ -107,7 +107,9 @@ app.post('/gen-webfonts', (req, res) => {
           (err, result) => {
             if (err) {
               console.log('Error in custom-fa.scss sass render. ', err);
-              res.sendStatus(500);
+              res.status(400).json({
+                error: 'Check icon tag name ' + err
+              });
             } else {
               fontawesomeSubset(
                 iconTags,

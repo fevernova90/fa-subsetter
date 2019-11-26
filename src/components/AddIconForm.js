@@ -1,77 +1,84 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addIcon } from '../actions/iconActions';
 
-class AddIconForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: '',
-      tag: ''
-    };
+import { Button, TextField, Paper, Typography } from '@material-ui/core';
 
-    this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(theme => ({
+  addIconPaper: {
+    padding: theme.spacing(2, 3),
+    textAlign: 'center'
+  }
+}));
+
+const AddIconForm = props => {
+  const [title, setTitle] = useState('');
+  const [tag, setTag] = useState('');
+
+  const classes = useStyles();
+
+  function onChange(e) {
+    switch (e.target.name) {
+      case 'title':
+        setTitle(e.target.value);
+        break;
+      case 'tag':
+        setTag(e.target.value);
+        break;
+      default:
+        break;
+    }
   }
 
-  onChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
-  }
-
-  onSubmit(e) {
+  function onSubmit(e) {
     e.preventDefault();
 
     const icon = {
-      title: this.state.title,
-      tag: this.state.tag
+      title: title,
+      tag: tag
     };
 
-    this.props.addIcon(icon);
+    props.addIcon(icon);
+
+    setTitle('');
+    setTag('');
+
+    document.getElementById('input-title').focus();
   }
 
-  render() {
-    return (
-      <div className='add-icon-section'>
-        <h3>Add Icon</h3>
-        <form onSubmit={this.onSubmit}>
-          <div>
-            <label htmlFor='inp-title' className='inp'>
-              <input
-                id='inp-title'
-                type='text'
-                placeholder='&nbsp;'
-                name='title'
-                onChange={this.onChange}
-                value={this.state.title}
-              />
-              <span className='label'>Title</span>
-              <span className='border'></span>
-            </label>
-          </div>
-
-          <br />
-          <div>
-            <label htmlFor='inp-tag' className='inp'>
-              <input
-                id='inp-tag'
-                placeholder='&nbsp;'
-                type='text'
-                name='tag'
-                onChange={this.onChange}
-                value={this.state.tag}
-              />
-              <span className='label'>Icon Tag</span>
-              <span className='border'></span>
-            </label>
-          </div>
-          <br />
-          <button type='submit'>Submit</button>
-        </form>
-      </div>
-    );
-  }
-}
+  return (
+    <Paper className={classes.addIconPaper}>
+      <Typography variant='h6'>Add Icon</Typography>
+      <form onSubmit={onSubmit}>
+        <TextField
+          id='input-title'
+          label='Title'
+          required
+          name='title'
+          value={title}
+          onChange={onChange}
+        />
+        <br />
+        <TextField
+          id='input-tag'
+          label='Tag Name'
+          required
+          name='tag'
+          value={tag}
+          onChange={onChange}
+        />
+        <br />
+        <br />
+        <Button type='submit' variant='contained' color='primary'>
+          Add
+        </Button>
+      </form>
+    </Paper>
+  );
+};
 
 AddIconForm.propTypes = {
   addIcon: PropTypes.func.isRequired
