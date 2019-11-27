@@ -47,8 +47,16 @@ const store = createStore(
     : applyMiddleware(...middleware)
 );
 ```
+___
 
+## Application on serving site
+
+In the app frontend page, enter your preferred icon tag by referring to official [FontAwesome icon search](https://fontawesome.com/icons?d=gallery). When you have finalized your list, click save, and download. The downloaded zip file contains the `custom-fa.min.css` and a `/webfonts` folder.
+
+Copy these files into your static server and refer to the CSS file from an html `<link>`.
 
 ___
+
+## Font Awesome Pro
 
 Font Awesome Pro is possible but you have to manually configure the credentials for `@fortawesome/fontawesome` by following this [instructions](https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers).
