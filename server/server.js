@@ -47,8 +47,8 @@ const zippingFiles = () => {
   archive.file(__dirname + '/generated-css/custom-fa.min.css', {
     name: 'custom-fa.min.css'
   });
-  archive.file(__dirname + '/generated-css/saved-icons.dat', {
-    name: 'saved-icons.dat'
+  archive.file(__dirname + '/generated-css/saved-icons.json', {
+    name: 'saved-icons.json'
   });
   archive.directory(__dirname + '/generated-css/webfonts/', 'webfonts');
   archive.finalize();
@@ -62,7 +62,7 @@ app.get('/download', (req, res) => {
 
 app.get('/saved-icons', (req, res) => {
   fs.readFile(
-    path.join(__dirname, 'generated-css/saved-icons.dat'),
+    path.join(__dirname, 'generated-css/saved-icons.json'),
     'utf8',
     (err, data) => {
       if (err) {
@@ -121,7 +121,7 @@ app.post('/gen-webfonts', (req, res) => {
                 err => {
                   if (!err) {
                     fs.writeFile(
-                      path.join(__dirname, 'generated-css/saved-icons.dat'),
+                      path.join(__dirname, 'generated-css/saved-icons.json'),
                       JSON.stringify(icons),
                       err => {
                         if (!err) {
@@ -129,7 +129,7 @@ app.post('/gen-webfonts', (req, res) => {
                           res.json(icons);
                         } else {
                           console.log(
-                            'Error in saving saved icons file, icons-saved.dat ',
+                            'Error in saving saved icons file, saved-icons.json ',
                             err
                           );
                           res.sendStatus(500);
