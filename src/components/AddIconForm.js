@@ -3,7 +3,16 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addIcon } from '../actions/iconActions';
 
-import { Button, TextField, Paper, Typography } from '@material-ui/core';
+import {
+  Button,
+  TextField,
+  Paper,
+  Typography,
+  Select,
+  MenuItem,
+  InputLabel,
+  FormControl
+} from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -11,12 +20,17 @@ const useStyles = makeStyles(theme => ({
   addIconPaper: {
     padding: theme.spacing(2, 3),
     textAlign: 'center'
+  },
+  formControl: {
+    padding: theme.spacing(2, 4),
+    width: '100%'
   }
 }));
 
 const AddIconForm = props => {
   const [title, setTitle] = useState('');
   const [tag, setTag] = useState('');
+  const [type, setType] = useState('fas');
 
   const classes = useStyles();
 
@@ -28,6 +42,9 @@ const AddIconForm = props => {
       case 'tag':
         setTag(e.target.value);
         break;
+      case 'font-type':
+        setType(e.target.value);
+        break;
       default:
         break;
     }
@@ -38,13 +55,15 @@ const AddIconForm = props => {
 
     const icon = {
       title: title,
-      tag: tag
+      tag: tag,
+      type: type
     };
 
     props.addIcon(icon);
 
     setTitle('');
     setTag('');
+    setType('fas');
 
     document.getElementById('input-title').focus();
   }
@@ -70,6 +89,19 @@ const AddIconForm = props => {
           value={tag}
           onChange={onChange}
         />
+        <br />
+        <FormControl className={classes.formControl}>
+          <Select
+            labelId='font-type-label'
+            id='font-type'
+            name='font-type'
+            value={type}
+            onChange={onChange}
+          >
+            <MenuItem value='fas'>Solid</MenuItem>
+            <MenuItem value='fab'>Brand</MenuItem>
+          </Select>
+        </FormControl>
         <br />
         <br />
         <Button type='submit' variant='contained' color='primary'>

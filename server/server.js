@@ -79,6 +79,54 @@ app.post('/gen-webfonts', (req, res) => {
   const icons = req.body;
   const iconTags = icons.map(icon => icon.tag);
 
+  // const mapIconsSubset = () => {
+  //   let solid = [],
+  //     brands = [];
+
+  //   icons.forEach(icon => {
+  //     switch (icon.type) {
+  //       case 'fas':
+  //         solid.push(icon.tag);
+  //         break;
+  //       case 'fab':
+  //         brands.push(icon.tag);
+  //         break;
+  //       default:
+  //         break;
+  //     }
+  //   });
+
+  //   return {
+  //     solid: solid,
+  //     brands: brands
+  //   };
+  // };
+
+  const mapIconsToSubset = icons => {
+    let output = {};
+
+    icons.forEach(icon => {
+      switch (icon.type) {
+        case 'fas': {
+          let newSolidArray = output.solid || [];
+          newSolidArray.push(icon.tag);
+          output = { ...output, solid: newSolidArray };
+          break;
+        }
+        case 'fab': {
+          let newBrandsArray = output.brands || [];
+          newBrandsArray.push(icon.tag);
+          output = { ...output, brands: newBrandsArray };
+          break;
+        }
+        default:
+          break;
+      }
+    });
+
+    return output;
+  };
+
   if (icons === undefined || icons.length === 0 || iconTags.length === 0) {
     console.log('Null request with undefined/zero icons array.');
     res.sendStatus(500);
@@ -90,6 +138,7 @@ app.post('/gen-webfonts', (req, res) => {
         `.#{$fa-css-prefix}-${tag}:before { content: fa-content($fa-var-${tag}); }`
     )
     .join('\n');
+  console.log(mapIconsToSubset(icons));
 
   fs.writeFile(
     path.join(__dirname, 'generated-css/scss/_icons.scss'),
@@ -112,7 +161,7 @@ app.post('/gen-webfonts', (req, res) => {
               });
             } else {
               fontawesomeSubset(
-                iconTags,
+                mapIconsToSubset(icons),
                 path.join(__dirname, 'generated-css/webfonts')
               );
               fs.writeFile(

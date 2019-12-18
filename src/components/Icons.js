@@ -60,7 +60,7 @@ const Icons = props => {
         </IconButton>
         <CardContent>
           <div className={classes.icon}>
-            <i className={'fas fa-' + icon.tag}></i>
+            <i className={icon.type + ' fa-' + icon.tag}></i>
           </div>
           <Typography variant='body2'>{icon.title}</Typography>
           <Typography style={{ fontStyle: 'italic' }} variant='caption'>

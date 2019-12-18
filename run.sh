@@ -1,0 +1,1 @@
+concurrently "NODE_ENV=production node ./server/server.js" "sleepms 1500 && open -a \"Google Chrome\" http://localhost:8080"
