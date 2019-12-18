@@ -8,13 +8,26 @@ import {
   Typography,
   IconButton,
   Card,
-  CardContent
+  CardContent,
+  GridList,
+  GridListTile
 } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { amber } from '@material-ui/core/colors';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
+    backgroundColor: theme.palette.background.paper
+  },
+  iconList: {
+    width: '100%',
+    height: '80vh'
+  },
   iconCard: {
     position: 'relative'
   },
@@ -46,8 +59,9 @@ const Icons = props => {
     props.deleteIcon(tag);
   };
 
-  const iconItems = props.icons.map(icon => (
-    <Grid item key={icon.tag} className={classes.iconGrid} md={2} sm={4} xs={8}>
+  const iconItems = props.icons.reverse().map(icon => (
+    // <Grid item key={icon.tag} className={classes.iconGrid} md={2} sm={4} xs={8}>
+    <GridListTile key={icon.tag} cols={1}>
       <Card className={classes.iconCard}>
         <IconButton
           className={classes.deleteIcon}
@@ -68,23 +82,26 @@ const Icons = props => {
           </Typography>
         </CardContent>
       </Card>
-    </Grid>
+    </GridListTile>
+    // </Grid>
   ));
 
   return (
-    <React.Fragment>
+    <div className={classes.root}>
       <Typography variant='h6'>List of added icons</Typography>
-      <Grid
+      {/* <Grid
         className={classes.iconList}
         container
         direction='row'
         justify='center'
         alignItems='center'
         spacing={2}
-      >
+      > */}
+      <GridList cellHeight={160} className={classes.iconList} cols={5}>
         {iconItems}
-      </Grid>
-    </React.Fragment>
+      </GridList>
+      {/* </Grid> */}
+    </div>
   );
 };
 

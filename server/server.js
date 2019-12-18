@@ -138,7 +138,6 @@ app.post('/gen-webfonts', (req, res) => {
         `.#{$fa-css-prefix}-${tag}:before { content: fa-content($fa-var-${tag}); }`
     )
     .join('\n');
-  console.log(mapIconsToSubset(icons));
 
   fs.writeFile(
     path.join(__dirname, 'generated-css/scss/_icons.scss'),

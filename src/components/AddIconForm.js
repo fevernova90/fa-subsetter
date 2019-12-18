@@ -63,7 +63,6 @@ const AddIconForm = props => {
 
     setTitle('');
     setTag('');
-    setType('fas');
 
     document.getElementById('input-title').focus();
   }
