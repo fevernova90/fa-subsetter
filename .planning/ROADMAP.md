@@ -74,7 +74,12 @@ Plans:
   3. `npm test` exits 0 with all tests passing after all dependency upgrades
   4. The app builds (`npm run build`) and all core workflows function correctly (add icon, remove icon, generate and download ZIP)
   5. `fontawesome-subset`, `express`, `archiver`, and `concurrently` are all at their target versions in package.json
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 04-01-PLAN.md — Upgrade fontawesome-subset 1.1.0→4.6.0 and express 4.17.1→4.21.2+ (critical/high CVE fixes)
+- [ ] 04-02-PLAN.md — Upgrade archiver 3.1.1→7.x and concurrently 5.x→9.x; confirm react-app-rewired/customize-cra removed
+- [ ] 04-03-PLAN.md — npm audit fix, add overrides for remaining transitive vulns, final zero-critical/zero-high verification
 
 ## Progress
 
@@ -86,4 +91,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Pre-Upgrade Baseline | 2/2 | Complete   | 2026-03-25 |
 | 2. node-sass to sass Migration | 1/1 | Complete   | 2026-03-25 |
 | 3. react-scripts 3 to 5 Upgrade | 0/1 | Not started | - |
-| 4. Direct Dependency Cleanup and Audit Clear | 0/0 | Not started | - |
+| 4. Direct Dependency Cleanup and Audit Clear | 0/3 | Not started | - |
