@@ -29,7 +29,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. `npm test` exits 0 with server API smoke tests covering all three endpoints (GET /download, GET /saved-icons, POST /gen-webfonts)
   4. `npm run build` completes without errors on the current codebase (pre-upgrade baseline documented)
   5. `package-lock.json` regenerated from a clean `npm install` with current dependency versions
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Component render tests (Icons, AddIconForm, Generator) + Redux store/action dispatch tests
+- [ ] 01-02-PLAN.md — Server API smoke tests (all 3 endpoints) + regenerate package-lock.json baseline
 
 ### Phase 2: node-sass to sass Migration
 **Goal**: node-sass is removed and replaced with dart-sass, server.js uses the new synchronous sass.compile() API, and the backend SCSS compilation is verified working before react-scripts is touched
@@ -73,7 +77,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Pre-Upgrade Baseline | 0/0 | Not started | - |
+| 1. Pre-Upgrade Baseline | 0/2 | Not started | - |
 | 2. node-sass to sass Migration | 0/0 | Not started | - |
 | 3. react-scripts 3 to 5 Upgrade | 0/0 | Not started | - |
 | 4. Direct Dependency Cleanup and Audit Clear | 0/0 | Not started | - |
