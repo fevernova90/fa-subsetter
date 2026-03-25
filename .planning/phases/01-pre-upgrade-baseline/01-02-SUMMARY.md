@@ -139,3 +139,13 @@ None - no external service configuration required.
 ---
 *Phase: 01-pre-upgrade-baseline*
 *Completed: 2026-03-25*
+
+## Self-Check: PASSED
+
+- FOUND: server/server.test.js
+- FOUND: server/server.js (with require.main guard and module.exports)
+- FOUND: package.json (with test:server script and supertest devDependency)
+- FOUND: package-lock.json (lockfileVersion: 3)
+- FOUND commit: 7eb5f9c (feat - Task 1)
+- FOUND commit: 701822b (test - Task 2)
+- FOUND commit: 9f73143 (chore - Task 3)
