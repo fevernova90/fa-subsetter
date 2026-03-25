@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 01-pre-upgrade-baseline 01-01-PLAN.md
-last_updated: "2026-03-25T07:52:08.518Z"
-last_activity: 2026-03-25 — Roadmap created
+stopped_at: Completed 01-pre-upgrade-baseline plan 02 (01-02-PLAN.md)
+last_updated: "2026-03-25T08:11:00.393Z"
+last_activity: 2026-03-25
 progress:
   total_phases: 4
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 2
-  completed_plans: 1
+  completed_plans: 2
   percent: 0
 ---
 
@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 Phase: 1 of 4 (Pre-Upgrade Baseline)
 Plan: 0 of 0 in current phase
 Status: Ready to plan
-Last activity: 2026-03-25 — Roadmap created
+Last activity: 2026-03-25
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -52,6 +52,7 @@ Progress: [░░░░░░░░░░] 0%
 - Trend: -
 
 *Updated after each plan completion*
+| Phase 01-pre-upgrade-baseline P02 | 11 | 3 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -64,6 +65,9 @@ Recent decisions affecting current work:
 - [Pre-roadmap]: Replace node-sass with sass (dart-sass); node-sass deprecated, has CVEs, fails on Node 18+
 - [Pre-roadmap]: Add basic tests before any upgrade; existing smoke test is fragile under Jest 27
 - [Phase 01-pre-upgrade-baseline]: Use applyMiddleware(thunk) in test stores; rootReducer import avoids REDUX_DEVTOOLS crash; global.fetch mock for jsdom
+- [Phase 01-pre-upgrade-baseline]: Use supertest@6.x not 7.x: formidable in 7.x uses node: protocol incompatible with Jest 24 in react-scripts 3
+- [Phase 01-pre-upgrade-baseline]: Mock node-sass in server tests: native binary unsupported on Node 24/arm64; Phase 2 will replace node-sass
+- [Phase 01-pre-upgrade-baseline]: Use npm install --ignore-scripts: node-sass requires Python for native build, unavailable on CI/Node 24
 
 ### Pending Todos
 
@@ -76,6 +80,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-25T07:52:08.515Z
-Stopped at: Completed 01-pre-upgrade-baseline 01-01-PLAN.md
+Last session: 2026-03-25T08:11:00.391Z
+Stopped at: Completed 01-pre-upgrade-baseline plan 02 (01-02-PLAN.md)
 Resume file: None

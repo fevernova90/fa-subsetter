@@ -12,7 +12,7 @@ This roadmap covers the security maintenance milestone for fa-subsetter: clearin
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Pre-Upgrade Baseline** - Write regression tests and regenerate lockfile before any dependencies are changed
+- [x] **Phase 1: Pre-Upgrade Baseline** - Write regression tests and regenerate lockfile before any dependencies are changed (completed 2026-03-25)
 - [ ] **Phase 2: node-sass to sass Migration** - Replace deprecated node-sass with dart-sass and update server.js call site
 - [ ] **Phase 3: react-scripts 3 to 5 Upgrade** - Upgrade CRA from 3.2.0 to 5.0.1, clearing ~200 vulnerabilities
 - [ ] **Phase 4: Direct Dependency Cleanup and Audit Clear** - Upgrade remaining vulnerable deps and achieve zero critical/high findings
@@ -33,7 +33,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 Plans:
 - [x] 01-01-PLAN.md — Component render tests (Icons, AddIconForm, Generator) + Redux store/action dispatch tests
-- [ ] 01-02-PLAN.md — Server API smoke tests (all 3 endpoints) + regenerate package-lock.json baseline
+- [x] 01-02-PLAN.md — Server API smoke tests (all 3 endpoints) + regenerate package-lock.json baseline
 
 ### Phase 2: node-sass to sass Migration
 **Goal**: node-sass is removed and replaced with dart-sass, server.js uses the new synchronous sass.compile() API, and the backend SCSS compilation is verified working before react-scripts is touched
@@ -77,7 +77,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Pre-Upgrade Baseline | 1/2 | In Progress|  |
+| 1. Pre-Upgrade Baseline | 2/2 | Complete   | 2026-03-25 |
 | 2. node-sass to sass Migration | 0/0 | Not started | - |
 | 3. react-scripts 3 to 5 Upgrade | 0/0 | Not started | - |
 | 4. Direct Dependency Cleanup and Audit Clear | 0/0 | Not started | - |
