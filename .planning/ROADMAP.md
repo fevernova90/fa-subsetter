@@ -14,8 +14,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Pre-Upgrade Baseline** - Write regression tests and regenerate lockfile before any dependencies are changed (completed 2026-03-25)
 - [x] **Phase 2: node-sass to sass Migration** - Replace deprecated node-sass with dart-sass and update server.js call site (completed 2026-03-25)
-- [ ] **Phase 3: react-scripts 3 to 5 Upgrade** - Upgrade CRA from 3.2.0 to 5.0.1, clearing ~200 vulnerabilities
-- [ ] **Phase 4: Direct Dependency Cleanup and Audit Clear** - Upgrade remaining vulnerable deps and achieve zero critical/high findings
+- [x] **Phase 3: react-scripts 3 to 5 Upgrade** - Upgrade CRA from 3.2.0 to 5.0.1, clearing ~200 vulnerabilities (completed 2026-03-25)
+- [x] **Phase 4: Direct Dependency Cleanup and Audit Clear** - Upgrade remaining vulnerable deps and achieve zero critical/high findings (completed 2026-03-25)
 
 ## Phase Details
 
@@ -62,7 +62,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [x] 03-01-PLAN.md — Remove react-app-rewired/customize-cra, upgrade react-scripts 3→5, fix Jest 27 jsdom env, verify Webpack 5 build
+- [x] 03-01-PLAN.md — Remove react-app-rewired/customize-cra, upgrade react-scripts 3→5, fix Jest 27 jsdom env, verify Webpack 5 build (completed 2026-03-25)
 
 ### Phase 4: Direct Dependency Cleanup and Audit Clear
 **Goal**: All remaining direct-dependency vulnerabilities are resolved, housekeeping upgrades are applied, and npm audit reports zero critical and zero high severity findings
@@ -79,7 +79,7 @@ Plans:
 Plans:
 - [x] 04-01-PLAN.md — Upgrade fontawesome-subset 1.1.0→4.6.0 and express 4.17.1→4.21.2+ (critical/high CVE fixes)
 - [x] 04-02-PLAN.md — Upgrade archiver 3.1.1→7.x and concurrently 5.x→9.x; confirm react-app-rewired/customize-cra removed
-- [ ] 04-03-PLAN.md — npm audit fix, add overrides for remaining transitive vulns, final zero-critical/zero-high verification
+- [x] 04-03-PLAN.md — npm audit fix, add overrides for remaining transitive vulns, final zero-critical/zero-high verification
 
 ## Progress
 
@@ -90,5 +90,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Pre-Upgrade Baseline | 2/2 | Complete   | 2026-03-25 |
 | 2. node-sass to sass Migration | 1/1 | Complete   | 2026-03-25 |
-| 3. react-scripts 3 to 5 Upgrade | 0/1 | Not started | - |
-| 4. Direct Dependency Cleanup and Audit Clear | 2/3 | In Progress|  |
+| 3. react-scripts 3 to 5 Upgrade | 1/1 | Complete   | 2026-03-25 |
+| 4. Direct Dependency Cleanup and Audit Clear | 3/3 | Complete   | 2026-03-25 |
