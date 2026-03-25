@@ -91,4 +91,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Pre-Upgrade Baseline | 2/2 | Complete   | 2026-03-25 |
 | 2. node-sass to sass Migration | 1/1 | Complete   | 2026-03-25 |
 | 3. react-scripts 3 to 5 Upgrade | 0/1 | Not started | - |
-| 4. Direct Dependency Cleanup and Audit Clear | 0/3 | Not started | - |
+| 4. Direct Dependency Cleanup and Audit Clear | 0/3 | Planned    |  |

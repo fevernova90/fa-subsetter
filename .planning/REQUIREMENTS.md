@@ -21,8 +21,8 @@ Requirements for security maintenance milestone. Each maps to roadmap phases.
 
 ### Security — Direct Dependencies
 
-- [ ] **SEC-04**: fontawesome-subset upgraded from 1.1.0 to 4.6.0, resolving critical xmldom CVE
-- [ ] **SEC-05**: express upgraded from 4.17.1 to 4.21.2+, resolving XSS and open redirect CVEs
+- [x] **SEC-04**: fontawesome-subset upgraded from 1.1.0 to 4.6.0, resolving critical xmldom CVE
+- [x] **SEC-05**: express upgraded from 4.17.1 to 4.21.2+, resolving XSS and open redirect CVEs
 - [ ] **SEC-06**: npm audit fix run to clear remaining transitive vulnerabilities
 
 ### Security — Audit Targets
@@ -33,9 +33,9 @@ Requirements for security maintenance milestone. Each maps to roadmap phases.
 
 ### Housekeeping
 
-- [ ] **HOUSE-01**: concurrently upgraded from 5.0.0 to 9.x, resolving moderate yargs vuln
-- [ ] **HOUSE-02**: archiver upgraded from 3.1.1 to 7.x
-- [ ] **HOUSE-03**: react-app-rewired and customize-cra removed if no config-overrides.js exists
+- [x] **HOUSE-01**: concurrently upgraded from 5.0.0 to 9.x, resolving moderate yargs vuln
+- [x] **HOUSE-02**: archiver upgraded from 3.1.1 to 7.x
+- [x] **HOUSE-03**: react-app-rewired and customize-cra removed if no config-overrides.js exists
 
 ## v2 Requirements
 
@@ -72,15 +72,15 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SEC-01 | Phase 3 | Complete |
 | SEC-02 | Phase 2 | Complete |
 | SEC-03 | Phase 2 | Complete |
-| SEC-04 | Phase 4 | Pending |
-| SEC-05 | Phase 4 | Pending |
+| SEC-04 | Phase 4 | Complete |
+| SEC-05 | Phase 4 | Complete |
 | SEC-06 | Phase 4 | Pending |
 | SEC-07 | Phase 4 | Pending |
 | SEC-08 | Phase 4 | Pending |
 | SEC-09 | Phase 4 | Pending |
-| HOUSE-01 | Phase 4 | Pending |
-| HOUSE-02 | Phase 4 | Pending |
-| HOUSE-03 | Phase 4 | Pending |
+| HOUSE-01 | Phase 4 | Complete |
+| HOUSE-02 | Phase 4 | Complete |
+| HOUSE-03 | Phase 4 | Complete |
 
 **Coverage:**
 - v1 requirements: 15 total
