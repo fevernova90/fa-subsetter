@@ -23,13 +23,13 @@ Requirements for security maintenance milestone. Each maps to roadmap phases.
 
 - [x] **SEC-04**: fontawesome-subset upgraded from 1.1.0 to 4.6.0, resolving critical xmldom CVE
 - [x] **SEC-05**: express upgraded from 4.17.1 to 4.21.2+, resolving XSS and open redirect CVEs
-- [ ] **SEC-06**: npm audit fix run to clear remaining transitive vulnerabilities
+- [x] **SEC-06**: npm audit fix run to clear remaining transitive vulnerabilities
 
 ### Security — Audit Targets
 
-- [ ] **SEC-07**: npm audit reports zero critical vulnerabilities
-- [ ] **SEC-08**: npm audit reports zero high severity vulnerabilities
-- [ ] **SEC-09**: App builds successfully and all tests pass after updates
+- [x] **SEC-07**: npm audit reports zero critical vulnerabilities
+- [x] **SEC-08**: npm audit reports zero high severity vulnerabilities
+- [x] **SEC-09**: App builds successfully and all tests pass after updates
 
 ### Housekeeping
 
@@ -74,10 +74,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SEC-03 | Phase 2 | Complete |
 | SEC-04 | Phase 4 | Complete |
 | SEC-05 | Phase 4 | Complete |
-| SEC-06 | Phase 4 | Pending |
-| SEC-07 | Phase 4 | Pending |
-| SEC-08 | Phase 4 | Pending |
-| SEC-09 | Phase 4 | Pending |
+| SEC-06 | Phase 4 | Complete |
+| SEC-07 | Phase 4 | Complete |
+| SEC-08 | Phase 4 | Complete |
+| SEC-09 | Phase 4 | Complete |
 | HOUSE-01 | Phase 4 | Complete |
 | HOUSE-02 | Phase 4 | Complete |
 | HOUSE-03 | Phase 4 | Complete |
