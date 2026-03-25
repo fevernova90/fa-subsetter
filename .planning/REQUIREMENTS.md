@@ -15,7 +15,7 @@ Requirements for security maintenance milestone. Each maps to roadmap phases.
 
 ### Security — Build Toolchain
 
-- [ ] **SEC-01**: react-scripts upgraded from 3.2.0 to 5.0.1, resolving ~64 transitive vulnerabilities
+- [x] **SEC-01**: react-scripts upgraded from 3.2.0 to 5.0.1, resolving ~64 transitive vulnerabilities
 - [x] **SEC-02**: node-sass replaced with sass (dart-sass) in package.json and server.js
 - [x] **SEC-03**: SCSS compilation in server.js uses dart-sass API (sass.compile or sass.compileAsync)
 
@@ -69,7 +69,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TEST-01 | Phase 1 | Complete |
 | TEST-02 | Phase 1 | Complete |
 | TEST-03 | Phase 1 | Complete |
-| SEC-01 | Phase 3 | Pending |
+| SEC-01 | Phase 3 | Complete |
 | SEC-02 | Phase 2 | Complete |
 | SEC-03 | Phase 2 | Complete |
 | SEC-04 | Phase 4 | Pending |

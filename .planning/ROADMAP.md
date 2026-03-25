@@ -62,7 +62,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 03-01-PLAN.md — Remove react-app-rewired/customize-cra, upgrade react-scripts 3→5, fix Jest 27 jsdom env, verify Webpack 5 build
+- [x] 03-01-PLAN.md — Remove react-app-rewired/customize-cra, upgrade react-scripts 3→5, fix Jest 27 jsdom env, verify Webpack 5 build
 
 ### Phase 4: Direct Dependency Cleanup and Audit Clear
 **Goal**: All remaining direct-dependency vulnerabilities are resolved, housekeeping upgrades are applied, and npm audit reports zero critical and zero high severity findings
