@@ -59,7 +59,10 @@ Plans:
   3. `npm test` exits 0 with all tests passing under Jest 27
   4. `npm audit` vulnerability count is reduced by approximately 200 compared to the Phase 1 baseline
   5. The app loads and functions correctly in the browser (icon list renders, add/remove/generate/download all work)
-**Plans**: TBD
+**Plans**: 1 plan
+
+Plans:
+- [ ] 03-01-PLAN.md — Remove react-app-rewired/customize-cra, upgrade react-scripts 3→5, fix Jest 27 jsdom env, verify Webpack 5 build
 
 ### Phase 4: Direct Dependency Cleanup and Audit Clear
 **Goal**: All remaining direct-dependency vulnerabilities are resolved, housekeeping upgrades are applied, and npm audit reports zero critical and zero high severity findings
@@ -82,5 +85,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Pre-Upgrade Baseline | 2/2 | Complete   | 2026-03-25 |
 | 2. node-sass to sass Migration | 1/1 | Complete   | 2026-03-25 |
-| 3. react-scripts 3 to 5 Upgrade | 0/0 | Not started | - |
+| 3. react-scripts 3 to 5 Upgrade | 0/1 | Not started | - |
 | 4. Direct Dependency Cleanup and Audit Clear | 0/0 | Not started | - |
