@@ -44,7 +44,10 @@ Plans:
   2. POST /gen-webfonts endpoint produces a valid ZIP file with correctly compiled CSS (manually testable via the app)
   3. `npm test` still exits 0 after the node-sass replacement (no regression)
   4. `npm run build` still completes without errors after the node-sass replacement
-**Plans**: TBD
+**Plans**: 1 plan
+
+Plans:
+- [ ] 02-01-PLAN.md — Swap node-sass for dart-sass, migrate server.js sass.render() to sass.compile(), remove node-sass mock from server tests
 
 ### Phase 3: react-scripts 3 to 5 Upgrade
 **Goal**: react-scripts is upgraded from 3.2.0 to 5.0.1, clearing ~200 of 239 vulnerabilities, with the app building and all tests passing under Webpack 5 and Jest 27
@@ -78,6 +81,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Pre-Upgrade Baseline | 2/2 | Complete   | 2026-03-25 |
-| 2. node-sass to sass Migration | 0/0 | Not started | - |
+| 2. node-sass to sass Migration | 0/1 | Not started | - |
 | 3. react-scripts 3 to 5 Upgrade | 0/0 | Not started | - |
 | 4. Direct Dependency Cleanup and Audit Clear | 0/0 | Not started | - |
