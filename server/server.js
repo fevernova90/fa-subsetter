@@ -2,7 +2,7 @@ const fs = require('fs');
 const archiver = require('archiver');
 // const util = require('util');
 // const writeFilePromise = util.promisify(fs.writeFile);
-const sass = require('node-sass');
+const sass = require('sass');
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -147,49 +147,45 @@ app.post('/gen-webfonts', (req, res) => {
         console.log('Error writing _icons.scss', err);
         res.sendStatus(500);
       } else {
-        sass.render(
-          {
-            file: path.join(__dirname, 'generated-css/custom-fa.scss'),
-            outputStyle: 'compressed'
-          },
-          (err, result) => {
-            if (err) {
-              console.log('Error in custom-fa.scss sass render. ', err);
-              res.status(400).json({
-                error: 'Check icon tag name ' + err
-              });
-            } else {
-              fontawesomeSubset(
-                mapIconsToSubset(icons),
-                path.join(__dirname, 'generated-css/webfonts')
-              );
+        let sassResult;
+        try {
+          sassResult = sass.compile(
+            path.join(__dirname, 'generated-css/custom-fa.scss'),
+            { style: 'compressed' }
+          );
+        } catch (sassErr) {
+          console.log('Error in custom-fa.scss sass compile. ', sassErr);
+          res.status(400).json({ error: 'Check icon tag name ' + sassErr });
+          return;
+        }
+        fontawesomeSubset(
+          mapIconsToSubset(icons),
+          path.join(__dirname, 'generated-css/webfonts')
+        );
+        fs.writeFile(
+          path.join(__dirname, 'generated-css/custom-fa.min.css'),
+          sassResult.css,
+          err => {
+            if (!err) {
               fs.writeFile(
-                path.join(__dirname, 'generated-css/custom-fa.min.css'),
-                result.css,
+                path.join(__dirname, 'generated-css/saved-icons.json'),
+                JSON.stringify(icons),
                 err => {
                   if (!err) {
-                    fs.writeFile(
-                      path.join(__dirname, 'generated-css/saved-icons.json'),
-                      JSON.stringify(icons),
-                      err => {
-                        if (!err) {
-                          zippingFiles();
-                          res.json(icons);
-                        } else {
-                          console.log(
-                            'Error in saving saved icons file, saved-icons.json ',
-                            err
-                          );
-                          res.sendStatus(500);
-                        }
-                      }
-                    );
+                    zippingFiles();
+                    res.json(icons);
                   } else {
-                    console.log('Error in writing css file. ', err);
+                    console.log(
+                      'Error in saving saved icons file, saved-icons.json ',
+                      err
+                    );
                     res.sendStatus(500);
                   }
                 }
               );
+            } else {
+              console.log('Error in writing css file. ', err);
+              res.sendStatus(500);
             }
           }
         );
