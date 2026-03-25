@@ -32,7 +32,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Component render tests (Icons, AddIconForm, Generator) + Redux store/action dispatch tests
+- [x] 01-01-PLAN.md — Component render tests (Icons, AddIconForm, Generator) + Redux store/action dispatch tests
 - [ ] 01-02-PLAN.md — Server API smoke tests (all 3 endpoints) + regenerate package-lock.json baseline
 
 ### Phase 2: node-sass to sass Migration
@@ -77,7 +77,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Pre-Upgrade Baseline | 0/2 | Not started | - |
+| 1. Pre-Upgrade Baseline | 1/2 | In Progress|  |
 | 2. node-sass to sass Migration | 0/0 | Not started | - |
 | 3. react-scripts 3 to 5 Upgrade | 0/0 | Not started | - |
 | 4. Direct Dependency Cleanup and Audit Clear | 0/0 | Not started | - |

@@ -9,8 +9,8 @@ Requirements for security maintenance milestone. Each maps to roadmap phases.
 
 ### Testing
 
-- [ ] **TEST-01**: Component render tests exist for Icons, AddIconForm, and Generator components
-- [ ] **TEST-02**: Redux store initializes correctly and key actions (addIcon, deleteIcon) dispatch properly
+- [x] **TEST-01**: Component render tests exist for Icons, AddIconForm, and Generator components
+- [x] **TEST-02**: Redux store initializes correctly and key actions (addIcon, deleteIcon) dispatch properly
 - [ ] **TEST-03**: Server API smoke tests cover all 3 endpoints (GET /download, GET /saved-icons, POST /gen-webfonts)
 
 ### Security — Build Toolchain
@@ -66,8 +66,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| TEST-01 | Phase 1 | Pending |
-| TEST-02 | Phase 1 | Pending |
+| TEST-01 | Phase 1 | Complete |
+| TEST-02 | Phase 1 | Complete |
 | TEST-03 | Phase 1 | Pending |
 | SEC-01 | Phase 3 | Pending |
 | SEC-02 | Phase 2 | Pending |
