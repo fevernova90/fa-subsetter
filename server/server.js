@@ -161,34 +161,38 @@ app.post('/gen-webfonts', (req, res) => {
         fontawesomeSubset(
           mapIconsToSubset(icons),
           path.join(__dirname, 'generated-css/webfonts')
-        );
-        fs.writeFile(
-          path.join(__dirname, 'generated-css/custom-fa.min.css'),
-          sassResult.css,
-          err => {
-            if (!err) {
-              fs.writeFile(
-                path.join(__dirname, 'generated-css/saved-icons.json'),
-                JSON.stringify(icons),
-                err => {
-                  if (!err) {
-                    zippingFiles();
-                    res.json(icons);
-                  } else {
-                    console.log(
-                      'Error in saving saved icons file, saved-icons.json ',
-                      err
-                    );
-                    res.sendStatus(500);
+        ).then(() => {
+          fs.writeFile(
+            path.join(__dirname, 'generated-css/custom-fa.min.css'),
+            sassResult.css,
+            err => {
+              if (!err) {
+                fs.writeFile(
+                  path.join(__dirname, 'generated-css/saved-icons.json'),
+                  JSON.stringify(icons),
+                  err => {
+                    if (!err) {
+                      zippingFiles();
+                      res.json(icons);
+                    } else {
+                      console.log(
+                        'Error in saving saved icons file, saved-icons.json ',
+                        err
+                      );
+                      res.sendStatus(500);
+                    }
                   }
-                }
-              );
-            } else {
-              console.log('Error in writing css file. ', err);
-              res.sendStatus(500);
+                );
+              } else {
+                console.log('Error in writing css file. ', err);
+                res.sendStatus(500);
+              }
             }
-          }
-        );
+          );
+        }).catch(err => {
+          console.log('Error generating webfonts with fontawesome-subset: ', err);
+          res.sendStatus(500);
+        });
       }
     }
   );
