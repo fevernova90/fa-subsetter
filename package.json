@@ -23,6 +23,7 @@
     "dev": "concurrently \"node ./server/server.js\" \"react-scripts start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:server": "node node_modules/.bin/jest server/server.test.js --testEnvironment node",
     "eject": "react-scripts eject"
   },
   "proxy": "http://localhost:8080",
@@ -45,6 +46,7 @@
     "concurrently": "^5.0.0",
     "customize-cra": "^0.9.1",
     "react-app-rewired": "^2.1.5",
+    "supertest": "^7.2.2",
     "typescript": "^3.7.2"
   }
 }

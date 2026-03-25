@@ -211,6 +211,10 @@ if (process.env.NODE_ENV === 'production') {
 
 // Ends here - Serving the CRA build folder via express
 
-app.listen(port, () => {
-  console.log('> Listening on port ', port);
-});
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log('> Listening on port ', port);
+  });
+}
+
+module.exports = app;
